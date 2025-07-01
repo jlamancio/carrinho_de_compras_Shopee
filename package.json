@@ -1,0 +1,13 @@
+{
+  "name": "carrinho_de_compras_shopee",
+  "version": "1.0.0",
+  "description": "Desenvolvimento do backend do carrinho de compras do Shopee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Amancio",
+  "license": "ISC",
+  "type": "commonjs"
+}
