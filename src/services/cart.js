@@ -1,5 +1,6 @@
-async function addItem(userCart){
-    // lógica
+async function addItem(userCart, item){
+   userCart.push(item);
+
 }
 
 
@@ -15,5 +16,7 @@ async function removeItem(userCart, index){
 
 
 async function calculateTotal(userCart){
-    // lógica
+    return userCart.reduce((total, item) => total + item.subtotal(), 0);
 }
+
+export default { addItem, deleteItem, removeItem, calculateTotal };
