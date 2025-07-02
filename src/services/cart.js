@@ -1,22 +1,17 @@
-async function addItem(userCart, item){
+export async function addItem(userCart, item){
    userCart.push(item);
-
 }
 
-
-async function deleteItem(userCart, name){
+export async function deleteItem(userCart, name){
     // lógica
 }
 
-
-async function removeItem(userCart, index){
+export async function removeItem(userCart, index){
     // lógica
 }
 
-
-
-async function calculateTotal(userCart){
-    return userCart.reduce((total, item) => total + item.subtotal(), 0);
+export async function calculateTotal(userCart){
+    // return userCart.reduce((total, item) => total + item.subtotal(), 0);
+    console.log(userCart.reduce((total, item) => total + item.subtotal(), 0));
 }
 
-export default { addItem, deleteItem, removeItem, calculateTotal };

@@ -15,4 +15,3 @@ entidades representadas:
                 adicionar item (produto)
                 deletar item (produto)
                 remover item (quantidades) 
-
