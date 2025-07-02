@@ -10,15 +10,25 @@ export async function deleteItem(userCart, name){
     }
 }
 
+/*
 export async function removeItem(userCart, index){
-    // lógica
+    const deleteIndex = index - 1;
+    if(index >= 0 && index < userCart.length){
+        userCart.splice(deleteIndex, 1);
+    }
+}
+*/
+
+export async function removeItem(userCart, item){
+    const indexFound = userCart.findIndex((produto) => produto.name === item.name)
+    console.log(`Item encontrado: ${ indexFound }`);
 }
 
 export async function calculateTotal(userCart){
     // return userCart.reduce((total, item) => total + item.subtotal(), 0);
     console.log('\n**********  Shopee cart total is: ********** ');
     const result = userCart.reduce((total, item) => total + item.subtotal(), 0);
-    console.log(`\n🎁Total: ${ result }\n`)
+    console.log(`\n🎁Total: ${ result }\n`);
 }
 
 export async function displayCart(userCart){
