@@ -11,7 +11,10 @@ export async function deleteItem(userCart, name){
 }
 
 export async function removeItem(userCart, index){
-    // lógica
+    const deleteIndex = index - 1;
+    if(index >= 0 && index < userCart.length){
+        userCart.splice(deleteIndex, 1);
+    }
 }
 
 export async function calculateTotal(userCart){

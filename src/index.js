@@ -11,6 +11,9 @@ const item2 = await createItem('hotwheels lamburgini', 39.99, 3);
 
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myCart, item2);
+
+await cartService.removeItem(myCart, 1)
+
 await cartService.displayCart(myCart);
 
 //await cartService.deleteItem(myCart, item2.name);
