@@ -3,7 +3,10 @@ export async function addItem(userCart, item){
 }
 
 export async function deleteItem(userCart, name){
-    // lógica
+    const index = userCart.findIndex((item) => item.name === name);
+    if (index !== -1){
+        userCart.splice(index, 1);
+    }
 }
 
 export async function removeItem(userCart, index){
