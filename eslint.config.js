@@ -22,14 +22,10 @@ export default defineConfig([
       js.configs.recommended, // Usa as regras recomendadas do ESLint para JavaScript
     ],
     rules: {
-      // Exigir ponto e vírgula:
-      "semi": ["error", "always"],
-      // Para exigir aspas simples:
-      // "quotes": ["error", "single"],
-      // Para avisar sobre console.log:
-      // "no-console": "warn",
-      // Para corrigir o erro de 'console.logg' que vimos (que é uma variável não definida):
-      'no-undef': 'error', 
+      "semi": ["error", "always"], // Exige ponto e vírgula
+      "indent": ["error", 4, { "SwitchCase": 1 }], // Indentação de 4 espaços
+      // "quotes": ["error", "single"], // Exemplo: exige aspas simples
+      // "no-console": "warn", // Exemplo: avisa sobre console.log
     },
   },
 ]);
