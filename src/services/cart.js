@@ -10,21 +10,35 @@ export async function deleteItem(userCart, name){
     }
 }
 
-/*
-export async function removeItem(userCart, index){
-    const deleteIndex = index - 1;
-    if(index >= 0 && index < userCart.length){
-        userCart.splice(deleteIndex, 1);
-    }
-<<<<<<< HEAD
-}
-*/
 
+export async function removeItem(userCart, index){
+    const deleteIndex = index -1;
+
+    if(index >= 0 && userCart.length){
+        userCart.splice(deleteIndex, 1)
+    }
+
+}
+
+/*
 export async function removeItem(userCart, item){
     const indexFound = userCart.findIndex((produto) => produto.name === item.name)
-    console.log(`Item encontrado: ${ indexFound }`);
-}
+    if (indexFound === -1){
+        console.log('Item não encontrado');
+        return;
+    }
 
+    if (userCart[indexFound].quantity > 1){
+        userCart[indexFound].quantity -= 1;
+        return;
+    } 
+    if (userCart[indexFound].quantity === 1){
+        userCart.splice(indexFound -1);
+        return;
+    }
+
+}
+*/
 export async function calculateTotal(userCart){
     // return userCart.reduce((total, item) => total + item.subtotal(), 0);
     console.log('\n**********  Shopee cart total is: ********** ');
