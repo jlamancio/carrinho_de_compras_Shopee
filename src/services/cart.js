@@ -11,7 +11,6 @@ export async function deleteItem(userCart, name) {
     }
 }
 
-
 export async function removeItemIndex(userCart, index) {
     const deleteIndex = index - 1;
 
@@ -23,9 +22,8 @@ export async function removeItemIndex(userCart, index) {
 
 export async function removeItem(userCart, item) {
     const indexFound = userCart.findIndex((product) => product.name === item.name);
-        console.log('Esta função deveria ter dado um erro !! ');
+    console.log(indexFound)
 }
-
 
 export async function calculateTotal(userCart) {
     // return userCart.reduce((total, item) => total + item.subtotal(), 0);

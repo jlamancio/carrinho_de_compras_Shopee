@@ -10,22 +10,21 @@ export default defineConfig([
       ecmaVersion: "latest",
       sourceType: "module",
       globals: {
-        ...globals.node, // Configura variáveis globais do ambiente Node.js
-        // Se você usar APIs de navegador em algum arquivo, pode descomentar a linha abaixo:
-        // ...globals.browser,
+        ...globals.node,
+        // ...globals.browser, // Descomente se seu código também rodar no navegador
       },
     },
     plugins: {
-      js, // Habilita o plugin JavaScript do ESLint
+      js,
     },
     extends: [
-      js.configs.recommended, // Usa as regras recomendadas do ESLint para JavaScript
+      js.configs.recommended,
     ],
     rules: {
-      "semi": ["error", "always"], // Exige ponto e vírgula
-      "indent": ["error", 4, { "SwitchCase": 1 }], // Indentação de 4 espaços
-      // "quotes": ["error", "single"], // Exemplo: exige aspas simples
-      // "no-console": "warn", // Exemplo: avisa sobre console.log
+      // INÍCIO DAS LINHAS ADICIONADAS/REAPROVEITADAS
+      "semi": ["error", "always"],                 // Exige ponto e vírgula no final das declarações.
+      "indent": ["error", 4, { "SwitchCase": 1 }], // Exige indentação de 4 espaços, com tratamento para SwitchCase.
+     
     },
   },
 ]);
