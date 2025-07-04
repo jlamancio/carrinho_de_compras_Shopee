@@ -1,7 +1,8 @@
 import createItem from './item.js';
 
 export async function addItem(userCart, item) {
-    return userCart.push(item);
+   userCart.push(item);
+   return userCart;
 }
 
 export async function deleteItem(userCart, name) {
@@ -10,13 +11,26 @@ export async function deleteItem(userCart, name) {
     if (index != -1) {
         const [removedItem] = userCart.splice(index, 1);
         console.log(`\nItem removed: ${removedItem.name}`);
-
-        const newTotal = await calculateTotal(userCart);
+        const newTotal = calculateTotal(userCart);
+        
     } else {
-        console.log(`\nItem $"{name}" não encontrado no carrinho.\n`);
+        console.log(`\nItem "${name}" não encontrado no carrinho.\n`); 
     }
     return userCart;
 }
+
+export async function excludeItemByIndex(userCart, index){
+    const removeIndex = index -1;
+    if (index >=0 && index < userCart.length){
+        userCart.splice(removeIndex, 1);
+    }
+}
+
+
+export async function changeItemByQuantity(userCart, item){
+    
+}
+
 
 export async function calculateTotal(userCart) {
     console.log('\n**********  Shopee cart total is: ********** ');
@@ -36,7 +50,7 @@ export async function displayCart(userCart) {
     else {
         userCart.forEach((item, index) => {
         console.log(`
-            ${index + 1}. ${item.name} - R$ ${item.price.toFixed(2)} x ${item.quantity}: Subtotal  ${item.subtotal()}`);
+            ${index + 1}. ${item.name} - R$ ${item.price} x ${item.quantity}: Subtotal  ${item.subtotal()}`);
         });
     }       
 
