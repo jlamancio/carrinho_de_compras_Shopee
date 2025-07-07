@@ -13,8 +13,21 @@ myCart = await cartService.addItem(myCart, item1);
 myCart = await cartService.addItem(myCart, item2);
 myCart = await cartService.addItem(myCart, item3);
 
+// await cartService.excludeItemByIndex(myCart, 4);
+
+console.log("\n--- MyCart ANTES de changeItemByQuantity ---");
+console.log(myCart); // Adicione esta linha
+
+myCart = await cartService.changeItemByQuantity(myCart, item1);
+
+console.log("\n--- MyCart DEPOIS de changeItemByQuantity ---");
+console.log(myCart); // Adicione esta linha
+
+
+
+
 // await cartService.deleteItem(myCart,'NomeQueNãoExisteNoCarrinhow');
 // await cartService.deleteItem(myCart, item1.name);
-// await cartService.excludeItemByIndex(myCart, 2)
+
 
 await cartService.displayCart(myCart);
